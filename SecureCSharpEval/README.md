@@ -1,4 +1,4 @@
-# SecureCSharpEval
+﻿# SecureCSharpEval
 
 **SecureCSharpEval**  is a secure and sandboxed C# script execution library that allows users to evaluate C# code dynamically while ensuring safety and preventing malicious activities.
 
