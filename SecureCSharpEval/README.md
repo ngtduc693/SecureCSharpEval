@@ -20,43 +20,50 @@ Install-Package SecureCSharpEval
 
 ## Usage
 
-- Basic Usage
-
-````csharp
-var eval = new SecureCSharpEval(new CodeValidator(), new ProcessExecutor());
-string code = "return x + y;";
-var parameters = new Dictionary<string, object>
-{
-    {"x", 10},
-    {"y", 20}
-};
-
-object? result = await eval.EvaluateAsync(code, parameters);
-Console.WriteLine($"Result: {result}");
-````
-
-- Using Conditional Statements and Loops
+- Using Conditional Statements, Loops and the new method
 
 ```csharp
-string code = @" 
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        if (i % 2 == 0)
-        {
-            sum += i;
-        }
-    }
-    return sum;
-";
-
-var parameters = new Dictionary<string, object>
+class Program
 {
-    {"n", 10}
-};
+    private static string checkPrime = @"
+    static bool IsPrime(int n)
+    {
+        if (n < 2) return false;
+        for (int i = 2; i * i <= n; i++)
+        {
+            if (n % i == 0) return false;
+        }
+        return true;
+    };
+    return IsPrime(number);
+    ";
+    static async Task Main(string[] args)
+    {
+        var n = 4;
+        var evaluator = new ScriptEvaluator();
 
-object? result = await eval.EvaluateAsync(code, parameters);
-Console.WriteLine($"Result: {result}");
+        Console.WriteLine("Before: {0}",n);
+
+        var parameters = new Dictionary<string, object>
+        {
+            { "number", n },
+        };
+        
+        var result = await evaluator.EvaluateAsync(checkPrime, parameters);
+
+        if (result.HasError)
+        {
+            Console.WriteLine($"Error: {result.ErrorMessage}");
+        }
+        else
+        {
+            Console.WriteLine($"Is Prime: {result.Result}");
+            Console.WriteLine($"Execution Time: {result.ExecutionTimeMs}ms");
+        }
+
+        Console.ReadKey();
+    }
+}
 ```
 
 ## Configuring Execution Limits
