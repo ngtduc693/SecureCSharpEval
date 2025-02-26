@@ -79,11 +79,32 @@ ScriptEvaluator(new SecurityConfiguration()
 
 ## Security Configuration Default
 
-```csharp
-AllowedNamespaces: System, System.Collections.Generic, System.Linq, System.Text, System.Threading.Tasks
-BlockedNamespaces: System.IO, System.Net, System.Reflection, System.Diagnostics, System.Runtime, Microsoft.Win32
-BlockedKeywords: unsafe, fixed, stackalloc, Process, File, Directory, Registry, Socket, WebClient, HttpClient
-TimeoutMs: 5000ms (5 seconds)
+```
+- AllowedNamespaces: [
+    System,
+    System.Collections.Generic,
+    System.Linq,
+    System.Text,
+    System.Threading.Tasks ]
+- BlockedNamespaces: [
+    System.IO,
+    System.Net,
+    System.Reflection,
+    System.Diagnostics,
+    System.Runtime,
+    Microsoft.Win32]
+- BlockedKeywords: [
+    unsafe,
+    fixed,
+    stackalloc,
+    Process,
+    File,
+    Directory,
+    Registry,
+    Socket,
+    WebClient,
+    HttpClient]
+- TimeoutMs: 5000ms (5 seconds)
 ```
 
 ## Security Considerations
