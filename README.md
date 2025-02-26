@@ -1,6 +1,8 @@
 # SecureCSharpEval
 
 **SecureCSharpEval**  is a secure and sandboxed C# script execution library that allows users to evaluate C# code dynamically while ensuring safety and preventing malicious activities.
+[![NuGet](https://img.shields.io/nuget/v/SecureCSharpEval.svg)](https://www.nuget.org/packages/SecureCSharpEval/)
+
 
 ## Features
 
@@ -109,7 +111,6 @@ ScriptEvaluator(new SecurityConfiguration()
 
 ## Security Considerations
 - By default, execution is **sandboxed** and **restricted** from running system commands.
-- If enabling **AllowShellExecution**, ensure proper input validation.
 - Avoid allowing user-provided scripts without proper review.
 
 ## Contact
