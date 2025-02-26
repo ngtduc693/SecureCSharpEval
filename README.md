@@ -69,9 +69,21 @@ class Program
 ## Configuring Execution Limits
 
 ```csharp
-eval.ExecutionTimeoutMs = 3000;  // Increase timeout to 3 seconds
-eval.MaxMemoryUsageMb = 100;     // Set max memory usage to 100 MB
-eval.AllowShellExecution = true; // Enable shell execution (use with caution)
+ScriptEvaluator(new SecurityConfiguration()
+{
+    TimeoutMs = 3000,  // Increase timeout to 3 seconds
+    BlockedKeywords  = new HashSet<string>{},
+    BlockedNamespaces =  new HashSet<string>{};
+}
+```
+
+## Security Configuration Default
+
+```csharp
+AllowedNamespaces: System, System.Collections.Generic, System.Linq, System.Text, System.Threading.Tasks
+BlockedNamespaces: System.IO, System.Net, System.Reflection, System.Diagnostics, System.Runtime, Microsoft.Win32
+BlockedKeywords: unsafe, fixed, stackalloc, Process, File, Directory, Registry, Socket, WebClient, HttpClient
+TimeoutMs: 5000ms (5 seconds)
 ```
 
 ## Security Considerations
