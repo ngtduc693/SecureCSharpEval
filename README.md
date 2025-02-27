@@ -68,14 +68,14 @@ class Program
 }
 ```
 
-## Configuring Execution Limits
+## Configuring Security Options
 
 ```csharp
 ScriptEvaluator(new SecurityConfiguration()
 {
     TimeoutMs = 3000,  // Increase timeout to 3 seconds
-    BlockedKeywords  = new HashSet<string>{},
-    BlockedNamespaces =  new HashSet<string>{};
+    BlockedKeywords  = new HashSet<string>{}, // optional
+    BlockedNamespaces =  new HashSet<string>{}; // optional
 }
 ```
 

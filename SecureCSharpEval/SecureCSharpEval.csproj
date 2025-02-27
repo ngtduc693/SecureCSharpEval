@@ -4,7 +4,7 @@
         <TargetFrameworks>net6.0;net8.0;net7.0;net9.0;</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <PackageId>SecureCSharpEval</PackageId>
-        <Version>25.2.27</Version>
+        <Version>25.2.27.2</Version>
         <Authors>ngtduc693</Authors>
         <Description>SecureCSharpEval is a .NET library designed to safely execute dynamic C# code with enhanced validation and security. It allows users to input C# expressions, pass arbitrary parameters, and evaluate formulas while preventing potential security risks.</Description>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -18,7 +18,7 @@
         <PackageReleaseNotes></PackageReleaseNotes>
         <AssemblyName>SecureCSharpEval</AssemblyName>
         <RootNamespace>SecureCSharpEval</RootNamespace>
-        <PackageIcon>securecsharpeval.jpg</PackageIcon>
+        <PackageIcon>securecsharpeval.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -31,10 +31,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="C:\Users\DUCNT\Downloads\securecsharpeval.jpg">
-          <Pack>True</Pack>
-          <PackagePath>\</PackagePath>
-        </None>
         <None Include="README.md" Pack="true" PackagePath="\" />
         <None Include="LICENSE.md" Pack="true" PackagePath="\" />
     </ItemGroup>
@@ -54,7 +50,13 @@
 
     <ItemGroup>
       <Folder Include="Interface\" />
-      <Folder Include="Resources\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Resources\securecsharpeval.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>
