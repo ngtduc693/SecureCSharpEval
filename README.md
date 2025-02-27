@@ -111,12 +111,15 @@ ScriptEvaluator(new SecurityConfiguration()
 - TimeoutMs: 5000ms (5 seconds)
 ```
 **- Execution time limit**
+
 ![Execution time limit](https://raw.githubusercontent.com/ngtduc693/SecureCSharpEval/refs/heads/main/imgs/execution%20time%20limit.png)
 
 **- Prevent remote command execution**
+
 ![Prevent remote command execution](https://raw.githubusercontent.com/ngtduc693/SecureCSharpEval/refs/heads/main/imgs/remote%20command%20execution%20limit.png)
 
 **- Prevent remote command execution**
+
 ![Prevent access to a file or folder](https://raw.githubusercontent.com/ngtduc693/SecureCSharpEval/refs/heads/main/imgs/Files%20or%20Folders%20limit.png)
 
 ## Security Considerations
